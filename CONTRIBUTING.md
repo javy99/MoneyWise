@@ -1,10 +1,3 @@
----
-
-### `CONTRIBUTING.md`:
-
-```markdown
-# Contributing to MoneyWise
-
 Thank you for considering contributing to MoneyWise! We appreciate your efforts in making this project better. Please follow the guidelines below to ensure a smooth development process.
 
 ## Branching Strategy
@@ -12,6 +5,7 @@ Thank you for considering contributing to MoneyWise! We appreciate your efforts 
 Use **Git Flow** or a **Simplified Workflow** to manage branches and keep things structured. Here's how you can apply it to this project:
 
 ### 1. Main Branches
+
 - **`main`** (or **`master`**):
   - This is your production-ready branch. All stable features and code are merged here.
   - Every commit to `main` should be thoroughly tested, with code that works in production.
@@ -20,9 +14,11 @@ Use **Git Flow** or a **Simplified Workflow** to manage branches and keep things
   - It reflects the state of the project in a working (but not yet production-ready) state.
 
 ### 2. Feature Branches
+
 Feature branches are created for new functionalities, improvements, or bug fixes.
 
 - **Branch naming**:
+
   - `feature/{feature-name}`: For new features.
   - `bugfix/{issue-name}`: For bug fixes.
   - `refactor/{refactor-name}`: For code refactoring or optimization.
@@ -36,10 +32,11 @@ Feature branches are created for new functionalities, improvements, or bug fixes
   3. Once the feature is completed, open a Pull Request (PR) from the feature branch to `develop`.
 
 ### 3. Hotfix Branches
+
 If a critical issue arises in production, use hotfix branches:
+
 - **Branch naming**:
   - `hotfix/{issue-name}`: For critical production fixes.
-  
 - **Workflow**:
   1. Create a branch off `main`:
      ```bash
@@ -56,18 +53,20 @@ Use clear, consistent commit messages to describe the changes you're making. A g
 - **Detailed Description** (optional): A longer explanation of the change, why it was made, and how.
 
 ### Commit Message Format:
+
 <type>(<scope>): <summary>
 
 [optional body]
 
-
 ### Examples:
+
 - `feat(auth): add login functionality`
 - `fix(transaction): resolve transaction sorting bug`
 - `refactor(user): optimize user data fetching`
 - `chore(tests): add unit tests for transaction service`
 
 ### Types of Changes:
+
 - **feat**: A new feature for the app (e.g., a new microservice or new functionality).
 - **fix**: A bug fix.
 - **chore**: Routine tasks like setting up configurations, package updates, or testing.
@@ -75,6 +74,7 @@ Use clear, consistent commit messages to describe the changes you're making. A g
 - **docs**: Documentation changes.
 
 ## Pull Requests
+
 1. **PR Review**: All pull requests should be reviewed before merging.
 2. **Testing**: Ensure that all tests pass before creating a pull request.
 3. **PR Description**: Provide a clear description of what your PR addresses and reference the relevant issue number (if applicable).
