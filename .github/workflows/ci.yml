@@ -30,8 +30,10 @@ jobs:
 
       - name: Run tests (placeholder)
         run: |
+          cd backend
           echo "No tests available yet."
 
       - name: Build the project
         run: |
+          cd backend
           go build -o moneywise
