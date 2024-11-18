@@ -66,4 +66,3 @@ For more details on the CI/CD process, check the .github.workflows folder in the
 ## Developers Guidelines
 
 Please follow the CONTRIBUTING.md file for detailed instructions on how to contribute, including the branching strategy, commit message convention, and pull request guidelines.
-````
