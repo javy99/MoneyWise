@@ -1,0 +1,39 @@
+# ReactJS Frontend 
+frontend/node_modules
+frontend/dist
+frontend/.env
+
+# Golang Backend
+backend/vendor
+backend/.env
+backend/bin/
+backend/pkg/
+
+# Ignore compiled Go binaries
+*.exe
+*.out
+*.test
+*.dbg
+
+# IDEs and Editors
+.vscode
+.idea
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Build artifacts
+build/
+*.tar.gz
+*.tgz
+
+# Helm / Kubernetes directories
+.kube/
+helm/
+
+.env
+
