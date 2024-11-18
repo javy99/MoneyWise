@@ -35,5 +35,5 @@ jobs:
 
       - name: Build the project
         run: |
-          cd backend
-          go build -o moneywise
+          cd backend/cmd/auth
+          go build

@@ -1,0 +1,40 @@
+basePath: /api/v1
+info:
+  contact: {}
+  description: This is the API documentation for MoneyWise auth microservice.
+  title: MoneyWise APIs
+  version: "1.0"
+paths:
+  /login:
+    post:
+      consumes:
+      - application/json
+      description: Logs in a user using their credentials
+      parameters:
+      - description: Username
+        in: body
+        name: username
+        required: true
+        schema:
+          type: string
+      - description: Password
+        in: body
+        name: password
+        required: true
+        schema:
+          type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Login successful
+          schema:
+            type: string
+        "400":
+          description: Invalid credentials
+          schema:
+            type: string
+      summary: Login User
+      tags:
+      - auth
+swagger: "2.0"
