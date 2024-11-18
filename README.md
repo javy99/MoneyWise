@@ -30,31 +30,36 @@ MoneyWise is a personal finance manager that helps users manage their income, ex
 
 1. Clone the repository:
 
-````bash
+```bash
 git clone https://github.com/javy99/MoneyWise.git
 ```
 
 2. Navigate to the backend directory:
+
 ```bash
 cd MoneyWise/backend
 ```
 
 3. Initialize the Go module:
+
 ```bash
 go mod init MoneyWise
 ```
 
 4. Run Docker containers (for local development):
+
 ```bash
 docker-compose up
 ```
 
 5. To run the backend locally, use:
+
 ```bash
 go run cmd/service-name/main.go
 ```
 
 6. For the frontend:
+
 ```bash
 cd frontend
 npm install
@@ -63,6 +68,7 @@ npm run dev
 
 CI/CD
 We use GitHub Actions for continuous integration and deployment. The workflows are configured to:
+
 - Run tests on pull requests.
 - Deploy the app to a staging environment upon merging to the develop branch
 - Deploy to production upon merging to the main branch.
