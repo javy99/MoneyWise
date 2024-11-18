@@ -25,6 +25,7 @@ jobs:
 
       - name: Install dependencies
         run: |
+          cd backend
           go mod tidy
 
       - name: Run tests (placeholder)
