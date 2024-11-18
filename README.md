@@ -1,5 +1,7 @@
 # MoneyWise
 
+![MIT License](https://img.shields.io/badge/License-MIT-yellow.svg)
+
 ## Project Overview
 
 MoneyWise is a personal finance manager that helps users manage their income, expenses, and investments efficiently. The app integrates with bank APIs, allows users to categorize transactions, and provides insightful visualizations to track financial goals.
