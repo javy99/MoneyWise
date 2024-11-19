@@ -40,7 +40,7 @@ jobs:
       # Step 5: Build the Docker image
       - name: Build the Docker image
         run: |
-          docker build -t javy1999/moneywise/auth:latest -f backend/docker/auth/Dockerfile .
+          docker build -t javy1999/moneywise-auth:latest -f backend/docker/auth/Dockerfile .
 
       # Step 6: Log in to Docker Hub (or your private registry)
       - name: Log in to Docker Hub
