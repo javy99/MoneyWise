@@ -23,6 +23,7 @@ backend/pkg/
 .DS_Store
 Thumbs.db
 
+
 # Logs
 *.log
 
@@ -37,3 +38,4 @@ helm/
 
 .env
 
+*.txt

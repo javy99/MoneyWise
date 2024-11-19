@@ -1,0 +1,17 @@
+replicaCount: 2
+
+image:
+  repository: javy1999/moneywise-auth
+  tag: latest
+  pullPolicy: IfNotPresent
+
+service:
+  type: NodePort
+  port: 80
+  targetPort: 8080
+  nodePort: 30000
+
+resources:
+  limits:
+    memory: "512Mi"
+    cpu: "500m"
