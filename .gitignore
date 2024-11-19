@@ -34,7 +34,6 @@ build/
 
 # Helm / Kubernetes directories
 .kube/
-helm/
 
 .env
 

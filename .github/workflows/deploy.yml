@@ -19,21 +19,45 @@ jobs:
       - name: Set up Kubernetes CLI
         uses: azure/setup-kubectl@v3
 
-      # Placeholder: Configure Kubernetes context (skip for now)
-      - name: Configure Kubernetes context
+      # Step 3: Set up Minikube (for local Kubernetes cluster)
+      - name: Set up Minikube
         run: |
-          echo "Skipping Kubernetes configuration as no context is available."
+          curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+          sudo mv minikube-linux-amd64 /usr/local/bin/minikube
+          sudo chmod +x /usr/local/bin/minikube
+          minikube start --driver=docker
 
-      # Step 3: Set up Docker Buildx (Placeholder for Docker support)
+      # Step 4: Set up Docker Buildx (for Docker support)
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
 
-      # Placeholder: Build and push Docker images
-      - name: Build and push Docker images
-        run: |
-          echo "Skipping Docker build as no Docker setup is available."
+      # Step 5: Log in to Docker Hub
+      - name: Log in to Docker Hub
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
 
-      # Placeholder: Apply Kubernetes manifests
-      - name: Apply Kubernetes manifests
+      # Step 6: Pull the Docker image from Docker Hub
+      - name: Pull Docker image
         run: |
-          echo "Skipping Kubernetes deployment as no manifests are available."
+          docker pull javy1999/moneywise-auth:latest
+
+      # Step 7: Set up Helm
+      - name: Set up Helm
+        uses: azure/setup-helm@v2
+
+      # Step 8: Configure kubectl to use Minikube's Kubernetes context
+      - name: Set up kubectl to use Minikube
+        run: |
+          kubectl config use-context minikube
+
+      # Step 9: Deploy using Helm
+      - name: Deploy using Helm
+        run: |
+          helm upgrade --install auth-release ./helm/auth --namespace javy --set image.repository=javy1999/moneywise-auth,image.tag=latest
+
+      # Step 10: Expose the service (if needed)
+      - name: Expose the service (Optional for Minikube)
+        run: |
+          minikube service auth-service --url --namespace javy
