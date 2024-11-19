@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: auth-deployment
+  labels:
+    app: auth
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: auth
+  template:
+    metadata:
+      labels:
+        app: auth
+    spec:
+      containers:
+        - name: auth
+          image: javy1999/moneywise-auth:latest
+          ports:
+            - containerPort: 8080
+          env:
+            - name: APP_ENV
+              value: production
+          resources:
+            limits:
+              memory: "512Mi"
+              cpu: "500m"
