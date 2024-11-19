@@ -64,8 +64,3 @@ jobs:
       - name: Deploy using Helm
         run: |
           helm upgrade --install auth-release ./backend/helm/auth --namespace javy --set image.repository=javy1999/moneywise-auth,image.tag=latest
-
-      # Step 10: Expose the service (if needed)
-      - name: Expose the service (Optional for Minikube)
-        run: |
-          minikube service auth-service --url --namespace javy
