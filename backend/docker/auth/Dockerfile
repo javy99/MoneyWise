@@ -5,14 +5,14 @@ FROM golang:1.22 AS builder
 WORKDIR /app
 
 # Copy Go module files and download dependencies
-COPY go.mod go.sum ./
+COPY backend/go.mod backend/go.sum ./
 RUN go mod download
 
 # Copy the source code
-COPY cmd/auth ./cmd/auth
-COPY internal/auth ./internal/auth
-COPY docs/auth ./docs/auth
-COPY pkg/auth ./pkg/auth
+COPY backend/cmd/auth ./cmd/auth
+COPY backend/internal/auth ./internal/auth
+COPY backend/docs/auth ./docs/auth
+COPY backend/pkg/auth ./pkg/auth
 
 # Build the Go application
 RUN go build -o auth ./cmd/auth/main.go
