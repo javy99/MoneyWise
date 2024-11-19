@@ -55,7 +55,12 @@ jobs:
         run: |
           kubectl config use-context minikube
 
-      # Step 9: Deploy using Helm
+        # Step 9: Create namespace if it does not exist
+      - name: Create namespace if it doesn't exist
+        run: |
+          kubectl get namespace javy || kubectl create namespace javy
+
+      # Step 10: Deploy using Helm
       - name: Deploy using Helm
         run: |
           helm upgrade --install auth-release ./backend/helm/auth --namespace javy --set image.repository=javy1999/moneywise-auth,image.tag=latest
