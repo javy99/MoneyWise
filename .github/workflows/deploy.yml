@@ -5,7 +5,10 @@ on:
     branches:
       - master
       - develop
-
+    pull_request:
+      branches:
+        - master
+        - develop
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -55,7 +58,7 @@ jobs:
       # Step 9: Deploy using Helm
       - name: Deploy using Helm
         run: |
-          helm upgrade --install auth-release ./helm/auth --namespace javy --set image.repository=javy1999/moneywise-auth,image.tag=latest
+          helm upgrade --install auth-release ./backend/helm/auth --namespace javy --set image.repository=javy1999/moneywise-auth,image.tag=latest
 
       # Step 10: Expose the service (if needed)
       - name: Expose the service (Optional for Minikube)
